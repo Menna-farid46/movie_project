@@ -24,7 +24,12 @@ class AppStyles {
         fontSize: 20.sp,
         fontWeight: FontWeight.w600,
         color: ColorsManager.darkbackgroundcolor
-      )
+      ),
+
+      headlineLarge: TextStyle(color: ColorsManager.whitecolor,
+      fontWeight: FontWeight.bold,
+
+      fontSize: 50.sp)
 
     ),
   );

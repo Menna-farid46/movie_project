@@ -4,6 +4,9 @@ import 'package:movies_final_project/core/resources/AssetsManager.dart';
 import 'package:movies_final_project/core/resources/ColorsManager.dart';
 import 'package:movies_final_project/core/resources/StringsManager.dart';
 import 'package:movies_final_project/core/reusable_componets/custom_button.dart';
+import 'package:movies_final_project/ui/onboarding/screen/onboarding.dart';
+
+import '../../../core/resources/Routes.dart';
 
 class Startscreen extends StatelessWidget {
   const Startscreen({super.key});
@@ -45,7 +48,9 @@ class Startscreen extends StatelessWidget {
                   ),
                   SizedBox(height: 24.h),
                   Container(width: double.infinity,
-                      child: CustomButton("Explore Now", () {})),
+                      child: CustomButton("Explore Now", () {
+                        Navigator.pushReplacementNamed(context,RoutesManager.OnboardingScreen );
+                      })),
                 ],
               ),
             ),

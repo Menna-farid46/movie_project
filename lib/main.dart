@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_final_project/core/resources/Appstyle.dart';
 import 'package:movies_final_project/core/resources/Routes.dart';
+import 'package:movies_final_project/ui/Login/screen/login_screen.dart';
 import 'package:movies_final_project/ui/StartScreen/screen/startscreen.dart';
+import 'package:movies_final_project/ui/onboarding/screen/onboarding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,6 +29,8 @@ class MyApp extends StatelessWidget {
           initialRoute: RoutesManager.startscreen,
           routes: {
             RoutesManager.startscreen: (_) => Startscreen(),
+            RoutesManager.OnboardingScreen:(_)=>OnboardingScreen(),
+            RoutesManager.loginscreen:(_)=>LoginScreen()
           },
         );
       },
