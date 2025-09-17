@@ -17,6 +17,21 @@ Share your thoughts on the movies you've watched. Dive deep into film details an
   static const String next="Next";
   static const String back="Back";
   static const String finish="Finish";
+  static const String forgetpassword="Forget Password ?";
+  static const String login="Login";
+  static const String haveaccount="Don’t Have Account ?";
+  static const String createaccount="Create One";
+  static const String or ="OR";//
+  static const String google="Login With Google";
+  static const String email="Email";
+  static const String password="Password";
+
+
+
+
+
+
+
 
 
 

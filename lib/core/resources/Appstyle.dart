@@ -4,8 +4,17 @@ import 'package:movies_final_project/core/resources/ColorsManager.dart';
 
 class AppStyles {
   static ThemeData darkTheme = ThemeData(
+
+    appBarTheme: AppBarTheme(scrolledUnderElevation: 0,
+      backgroundColor: Colors.transparent,
+      centerTitle: true,),
+
     scaffoldBackgroundColor: ColorsManager.darkbackgroundcolor,
-    colorScheme: ColorScheme.fromSeed(seedColor: ColorsManager.primarycolor),
+
+    colorScheme: ColorScheme.fromSeed(seedColor: ColorsManager.primarycolor,
+      primary: ColorsManager.primarycolor,
+      onPrimary:  ColorsManager.darkbackgroundcolor
+    ),
 
     textTheme: TextTheme(
       bodyMedium: TextStyle(
@@ -23,14 +32,26 @@ class AppStyles {
       bodyLarge: TextStyle(
         fontSize: 20.sp,
         fontWeight: FontWeight.w600,
-        color: ColorsManager.darkbackgroundcolor
+        color: ColorsManager.darkbackgroundcolor,
       ),
 
-      headlineLarge: TextStyle(color: ColorsManager.whitecolor,
-      fontWeight: FontWeight.bold,
+      headlineLarge: TextStyle(
+        color: ColorsManager.whitecolor,
+        fontWeight: FontWeight.bold,
+        fontSize: 50.sp,
+      ),
 
-      fontSize: 50.sp)
+      titleSmall: TextStyle(
+        color: ColorsManager.whitecolor,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w400,
+      ),
 
+      bodySmall: TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w400,
+        color: ColorsManager.primarycolor,
+      ),
     ),
   );
 }
