@@ -20,12 +20,12 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   late TextEditingController emailcontroller;
   late TextEditingController passwordcontroller;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  int selectedlanguage=0;
+  int selectedlanguage = 0;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -33,6 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
     emailcontroller = TextEditingController();
     passwordcontroller = TextEditingController();
   }
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -40,6 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
     emailcontroller = TextEditingController();
     passwordcontroller = TextEditingController();
   }
+
   @override
   Widget build(BuildContext context) {
     if (context.locale.languageCode == "ar") {
@@ -58,35 +60,39 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Image.asset(AssetsManager.logo),
                 ),
                 SizedBox(height: 69.h),
-                CustomField(prefix: AssetsManager.email,
+                CustomField(
+                  prefix: AssetsManager.email,
                   hint: "email".tr(),
-                controller: emailcontroller,
-                keyboard:TextInputType.emailAddress ,
-                validation: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "shouldempty";
-                  }
-                  if (!RegExp(emailRegex).hasMatch(value)) {
-                    return "Email not valid";
-                  }
-                  return null;
-                },
-                ispassword: false,),
+                  controller: emailcontroller,
+                  keyboard: TextInputType.emailAddress,
+                  validation: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "shouldempty".tr();
+                    }
+                    if (!RegExp(emailRegex).hasMatch(value)) {
+                      return "Email not valid".tr();
+                    }
+                    return null;
+                  },
+                  ispassword: false,
+                ),
                 SizedBox(height: 22.4.h),
-                CustomField(prefix: AssetsManager.lock,
+                CustomField(
+                  prefix: AssetsManager.lock,
                   hint: "password".tr(),
-                controller: passwordcontroller,
-                ispassword: true,
-                keyboard: TextInputType.visiblePassword,
-                validation: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "shouldempty";
-                  }
-                  if (value.length < 0) {
-                    return "Password must not be less than 8 charater";
-                  }
-                  return null;
-                },),
+                  controller: passwordcontroller,
+                  ispassword: true,
+                  keyboard: TextInputType.visiblePassword,
+                  validation: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "shouldempty".tr();
+                    }
+                    if (value.length < 8) {
+                      return "Password must not be less than 8 charater".tr();
+                    }
+                    return null;
+                  },
+                ),
                 SizedBox(height: 17.8.h),
                 TextButton(
                   onPressed: () {},
@@ -101,7 +107,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 33.26.h),
                 Container(
                   width: double.infinity,
-                  child: CustomButton("login".tr(), () {}),
+                  child: CustomButton("login".tr(), () {
+                    if (formKey.currentState!.validate()) {
+                      Navigator.pushReplacementNamed(
+                        context,
+                        RoutesManager.homescreen,
+                      );
+                    }
+                  }),
                 ),
                 SizedBox(height: 22.h),
                 Row(
@@ -116,10 +129,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     TextButton(
                       onPressed: () {
-
+                        Navigator.pushNamed(
+                          context,
+                          RoutesManager.regiterscreen,
+                        );
                       },
                       child: Text(
-                        "createaccount".tr(),
+                        "createone".tr(),
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           fontSize: 15.sp,
                           fontWeight: FontWeight.bold,
@@ -143,11 +159,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     Text(
-                        "or".tr(),
-                      style:Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 15.sp)
+                      "or".tr(),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall?.copyWith(fontSize: 15.sp),
                     ),
                     Flexible(
-                      child: SizedBox(width: 130.w,
+                      child: SizedBox(
+                        width: 130.w,
                         child: Divider(
                           color: ColorsManager.primarycolor,
                           thickness: 1,
@@ -158,7 +177,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 28.h,),
+                SizedBox(height: 28.h),
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -172,13 +191,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SvgPicture.asset(
-                        AssetsManager.google, // هنا مسار أيقونة google
+                        AssetsManager.google,
                         height: 24,
                         width: 24,
                       ),
                       SizedBox(width: 10),
                       Text(
-                        "google".tr(), // هنا الترجمة
+                        "google".tr(),
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.bold,
@@ -188,7 +207,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
 
-                SizedBox(height: 33.16.h,),
+                SizedBox(height: 33.16.h),
                 CustomSwitch(
                   onChange: (value) {
                     setState(() {
@@ -208,10 +227,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                   current: selectedlanguage,
                 ),
-
-
               ],
-
             ),
           ),
         ),
@@ -219,5 +235,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-

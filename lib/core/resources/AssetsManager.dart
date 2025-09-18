@@ -11,6 +11,12 @@ abstract final class AssetsManager {
   static const String eg="assets/images/EG.svg";
   static const String lock="assets/images/lock.svg";
   static const String email="assets/images/emai.svg";
+  static const String avatar1="assets/images/avatar1.png";
+  static const String avatar2="assets/images/avatar2.png";
+  static const String avatar3="assets/images/avatar3.png";
+  static const String phone="assets/images/phone.svg";
+  static const String contact="assets/images/contact.svg";
+
 
 
 

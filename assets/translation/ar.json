@@ -2,10 +2,20 @@
   "forgetpassword": "نسيت كلمة المرور ؟",
   "login": "تسجيل الدخول",
   "haveaccount": "ليس لديك حساب ؟",
-  "createaccount": "إنشاء حساب",
+  "createone": "إنشاء حساب",
   "or": "أو",
   "google": "تسجيل",
   "email": "البريد الإلكتروني",
   "password": "كلمة المرور",
-  "register": "تسجيل"
+  "register": "تسجيل",
+  "name": "الاسم",
+  "shouldempty": "هذا الحقل لا يجب أن يكون فارغًا",
+  "email not valid": "البريد الإلكتروني غير صالح",
+  "Password must not be less than 8 charater": "كلمة المرور يجب ألا تقل عن 8 أحرف",
+  "repassword": "إعادة كلمة المرور",
+  "Must be same": "يجب أن تكون كلمتا المرور متطابقتين",
+  "phone": "رقم الهاتف",
+  "phone_length": "رقم الهاتف يجب أن يتكون من 11 رقمًا",
+  "createaccount": "إنشاء حساب",
+  "Already Have Account": "هل لديك حساب بالفعل؟"
 }

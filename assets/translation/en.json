@@ -2,10 +2,20 @@
   "forgetpassword": "Forget Password ?",
   "login": "Login",
   "haveaccount": "Don’t Have Account ?",
-  "createaccount": "Create One",
+  "createone": "Create One",
   "or": "OR",
   "google": "Login With Google",
   "email": "Email",
   "password": "Password",
-  "register": "Register"
+  "register": "Register",
+  "name": "Name",
+  "shouldempty": "This field should not be empty",
+  "email not valid": "Email is not valid",
+  "Password must not be less than 8 charater": "Password must not be less than 8 characters",
+  "repassword": "Confirm Password",
+  "Must be same": "Passwords must match",
+  "phone": "Phone",
+  "phone_length": "Phone number must be 11 digits",
+  "createaccount": "Create Account",
+  "Already Have Account": "Already Have Account ? "
 }

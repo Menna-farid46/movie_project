@@ -5,7 +5,9 @@ import 'package:movies_final_project/core/resources/Appstyle.dart';
 import 'package:movies_final_project/core/resources/Routes.dart';
 import 'package:movies_final_project/ui/Login/screen/login_screen.dart';
 import 'package:movies_final_project/ui/StartScreen/screen/startscreen.dart';
+import 'package:movies_final_project/ui/home/screen/home_screen.dart';
 import 'package:movies_final_project/ui/onboarding/screen/onboarding.dart';
+import 'package:movies_final_project/ui/register/screen/register_screen.dart';
 
 import 'core/remote/local/prefsmanager.dart';
 
@@ -49,6 +51,10 @@ class MyApp extends StatelessWidget {
             RoutesManager.startscreen: (_) => Startscreen(),
             RoutesManager.OnboardingScreen:(_)=>OnboardingScreen(),
             RoutesManager.loginscreen:(_)=>LoginScreen(),
+            RoutesManager.regiterscreen:(_)=>RegisterScreen(),
+            RoutesManager.homescreen:(_)=>HomeScreen(),
+
+
 
           },
         );
